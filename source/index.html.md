@@ -1,16 +1,13 @@
 ---
-title: API Reference TEST v2 from Github
+title: API Reference for FoxMetrics
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - http
-  - javascript
+  - http HTTP
+  - javascript JS
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  - <a href='https://www.foxmetrics.com'>Sign Up for a FREE trial</a>
+  - <a href='https://docs.foxmetrics.com'>Documentation & Tutorials</a>
 
 includes:
   - errors
@@ -68,9 +65,9 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# System Events
 
-## Get All Kittens
+## Page View
 
 ```ruby
 require 'kittn'
@@ -92,10 +89,7 @@ curl "http://example.com/api/kittens" \
 ```
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+_fxm.events.push(['_fxm.pages.view']);
 ```
 
 > The above command returns JSON structured like this:
