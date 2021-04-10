@@ -215,7 +215,7 @@ ID | The ID of the kitten to delete
 
 # APP Events
 ## Installed
-## UnInstalled
+## Un-Installed
 ## Opened
 ## Started
 ## Resumed
