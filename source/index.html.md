@@ -2,8 +2,8 @@
 title: API Reference for FoxMetrics
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - http HTTP
-  - javascript JS
+  - javascript
+  - csharp  
 
 toc_footers:
   - <a href='https://www.foxmetrics.com'>Sign Up for a FREE trial</a>
@@ -130,32 +130,10 @@ available | true | If set to false, the result will include kittens that have al
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
+## Form View
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+_fxm.events.push(['_fxm.form.view',{}]);
 ```
 
 > The above command returns JSON structured like this:
@@ -184,33 +162,10 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to retrieve
 
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
+## Form Submit
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
+_fxm.events.push(['_fxm.form.submit',{}]);
 ```
 
 > The above command returns JSON structured like this:
@@ -233,3 +188,41 @@ This endpoint deletes a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
+
+## Exit
+## Download
+## Search
+## Error
+## Form Field Change
+## Form Field Error
+## Email *
+## Onsite Ad
+## Video
+## Widgets
+## Survey
+## Poll
+## E-Commerce Add Cart Item
+## E-Commerce Remove Cart Item
+## E-Commerce Product View
+## E-Commerce Product Review
+## E-Commerce Order
+## E-Commerce Purchase Item
+## Article View
+## Visitor Profile
+## Visit Profile
+
+
+
+# APP Events
+## Installed
+## UnInstalled
+## Opened
+## Started
+## Resumed
+## Paused
+## Stopped
+## Destroyed
+## Updated
+## Backgrounded
+## Crashed
+## Screen View
