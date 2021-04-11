@@ -47,59 +47,48 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# System Events
+# HTTPS Requests
 
-## Page View
-
-```javascript
-_fxm.events.push(['_fxm.pages.view', 'pt', 'pn', 'pgn', 'url', 'ref', {}]);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-
-}
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
+All HTTPS requests will have a set of predefined parameters as listed below. These parameters may be overwritten if needed otherwise the default or calculated values will be sent with every event.
 
 `GET https://0000000000000.cloudfront.net/f.000000000000000000000000`
 
+> Make sure you replace the 0s with the appropriate URL that is assigned to your account and application.
+
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-nv | 0 | New visitor if set to 1, existing visitor if 0
-ns | 0 | New session if set to 1, existing session if set to 0
-ib |   |
-v |   | The generated visitor id
-s |   | The generated session id
-en | _fxm.pages.view |
-ua | User Agent | The current browser user agent string
-hn |   | The host name that the user is currently browsing
-url |   | The full URL that is being browsed by the user.
-ref |   | The complete referring URL
-pn |   | The name of the page
-pt |   | The title of the page
-sr |   | The screen resolution in the format (width X height)
-bw |   | The browser width
-bh |   | The browser height
-tzo |   | The time zone offset for the current device
-tz |   | The time zone for the current device
-tzn |   | The name of the time zone for the current device
-lng |   | The language that is currently set on the device
-ce | true  | Boolean indicator if cookie is enabled.
-im | 0  | Set to 1 if its a mobile device or 0 if it isn't
-tech_cd |   |
-tech_pd |   |
+Parameter | Description | Value
+--------- | ----------- | -----
+nv | New visitor if set to 1, existing visitor if 0
+ns | New session if set to 1, existing session if set to 0
+ib |
+v | The generated visitor id
+s | The generated session id
+en | | fxm.pages.view
+ua | The current browser user agent string
+hn | The host name that the user is currently browsing
+url | The full URL that is being browsed by the user.
+ref | The complete referring URL
+pn | The name of the page
+pt | The title of the page
+sr | The screen resolution in the format (width X height)
+bw | The browser width
+bh | The browser height
+tzo | The time zone offset for the current device
+tz | The time zone for the current device
+tzn | The name of the time zone for the current device
+lng | The language that is currently set on the device
+ce | Boolean indicator if cookie is enabled.
+im | Set to 1 if its a mobile device or 0 if it isn't
+tech_cd |
+tech_pd |
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<aside class="notice">
+Ensure you use your assigned URL or replace the 0s above with your specific <code>pipeline</code> and <code>application</code> identifiers.
 </aside>
+
+
+# System Events
 
 ## Form View
 
@@ -123,9 +112,6 @@ This endpoint retrieves a specific kitten.
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
 
 ### URL Parameters
 
@@ -170,6 +156,33 @@ ID | The ID of the kitten to delete
 ## Form Field Error
 ## Onsite Ad
 ## Order
+
+## Page View
+
+```javascript
+_fxm.events.push(['_fxm.pages.view', 'pt', 'pn', 'pgn', 'url', 'ref', {}]);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+This endpoint retrieves all kittens.
+
+### HTTP Request
+
+
+
+
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
 ## Poll
 ## Product Review
 ## Product View
