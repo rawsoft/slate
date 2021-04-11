@@ -3,7 +3,7 @@ title: API Reference for FoxMetrics
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
-  - csharp  
+  #- csharp  
 
 toc_footers:
   - <a href='https://www.foxmetrics.com'>Sign Up for a FREE trial</a>
@@ -29,24 +29,6 @@ This example API documentation page was created with [Slate](https://github.com/
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
-
 ```javascript
 const kittn = require('kittn');
 
@@ -69,62 +51,51 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 ## Page View
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
 ```javascript
-_fxm.events.push(['_fxm.pages.view']);
+_fxm.events.push(['_fxm.pages.view', 'pt', 'pn', 'pgn', 'url', 'ref', {}]);
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+
+}
 ```
 
 This endpoint retrieves all kittens.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://0000000000000.cloudfront.net/f.000000000000000000000000`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+nv | 0 | New visitor if set to 1, existing visitor if 0
+ns | 0 | New session if set to 1, existing session if set to 0
+ib |   |
+v |   | The generated visitor id
+s |   | The generated session id
+en | _fxm.pages.view |
+ua | User Agent | The current browser user agent string
+hn |   | The host name that the user is currently browsing
+url |   | The full URL that is being browsed by the user.
+ref |   | The complete referring URL
+pn |   | The name of the page
+pt |   | The title of the page
+sr |   | The screen resolution in the format (width X height)
+bw |   | The browser width
+bh |   | The browser height
+tzo |   | The time zone offset for the current device
+tz |   | The time zone for the current device
+tzn |   | The name of the time zone for the current device
+lng |   | The language that is currently set on the device
+ce | true  | Boolean indicator if cookie is enabled.
+im | 0  | Set to 1 if its a mobile device or 0 if it isn't
+tech_cd |   |
+tech_pd |   |
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
@@ -189,40 +160,42 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
 
-## Exit
+## Add Cart Item
+## Article View
 ## Download
-## Search
+## Email *
 ## Error
+## Exit
 ## Form Field Change
 ## Form Field Error
-## Email *
 ## Onsite Ad
-## Video
-## Widgets
-## Survey
+## Order
 ## Poll
-## E-Commerce Add Cart Item
-## E-Commerce Remove Cart Item
-## E-Commerce Product View
-## E-Commerce Product Review
-## E-Commerce Order
-## E-Commerce Purchase Item
-## Article View
-## Visitor Profile
+## Product Review
+## Product View
+## Purchase Item
+## Remove Cart Item
+## Search
+## Survey
+## Video
 ## Visit Profile
+## Visitor Profile
+## Widgets
 
 
 
-# APP Events
-## Installed
-## Un-Installed
-## Opened
-## Started
-## Resumed
-## Paused
-## Stopped
-## Destroyed
-## Updated
+# Application Events
+
+
 ## Backgrounded
 ## Crashed
+## Destroyed
+## Installed
+## Opened
+## Paused
+## Resumed
 ## Screen View
+## Started
+## Stopped
+## Un-Installed
+## Updated
