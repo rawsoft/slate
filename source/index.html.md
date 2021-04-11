@@ -49,7 +49,13 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 # HTTPS Requests
 
+```javascript
+_fxm.events.push([..., {}]);
+```
+
 All HTTPS requests will have a set of predefined parameters as listed below. These parameters may be overwritten if needed otherwise the default or calculated values will be sent with every event.
+
+The last value of the array is reserved for any number of custom attributes.
 
 `GET https://0000000000000.cloudfront.net/f.000000000000000000000000`
 
@@ -64,7 +70,7 @@ ns | New session if set to 1, existing session if set to 0
 ib |
 v | The generated visitor id
 s | The generated session id
-en | | fxm.pages.view
+en | The event name | fxm.pages.view
 ua | The current browser user agent string
 hn | The host name that the user is currently browsing
 url | The full URL that is being browsed by the user.
@@ -90,61 +96,64 @@ Ensure you use your assigned URL or replace the 0s above with your specific <cod
 
 # System Events
 
+
+
 ## Form View
 
 ```javascript
-_fxm.events.push(['_fxm.form.view',{}]);
+_fxm.events.push(['_fxm.form.view','a[_fn]']);
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This call sends a form view event.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-
-### URL Parameters
+### Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+_fn | The name of the form
+
+
+
+
+
+
 
 ## Form Submit
 
 ```javascript
-_fxm.events.push(['_fxm.form.submit',{}]);
+_fxm.events.push(['_fxm.form.submit','a[_fn]', 'a[_fdur]']);
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+
 }
 ```
 
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
+This call sends a form submit event.
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to delete
+_fn | The name of the form
+_fdur | The time it took to fill out and submit the form in secs.
+
+
+
+
+
+
 
 ## Add Cart Item
 ## Article View
