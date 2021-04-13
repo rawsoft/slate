@@ -155,16 +155,192 @@ _fdur | The time it took to fill out and submit the form in secs.
 
 
 
-## Add Cart Item
-## Article View
-## Download
-## Email *
-## Error
-## Exit
+
+
 ## Form Field Change
+```javascript
+_fxm.events.push(['_fxm.form.fieldchange','a[_fn]', 'a[_flt]', 'a[_fln]', 'a[_flv]', 'a[_fldur]']);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+This call sends a data when the user changes the value of a field
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_fn | The name of the form
+_flt | The field type
+_fln | The field name
+_flv | The field value
+_fldur | The time it took to change the field in seconds
+
+
+
+
+
+
+
+
+
 ## Form Field Error
-## Onsite Ad
-## Order
+```javascript
+_fxm.events.push(['_fxm.form.fielderror','a[_fn]', 'a[_flt]', 'a[_fln]', 'a[_flv]', 'a[_msg]']);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+This call error messages at the field level
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_fn | The name of the form
+_flt | The field type
+_fln | The field name
+_flv | The field value
+_msg | the error message
+
+
+
+
+
+
+## Exit
+```javascript
+_fxm.events.push(['_fxm.pages.exit','a[_id]', 'a[_href]']);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+When a visitor exits the local page towards a new destination page outside of the site.
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_id | The element id of the element that they clicked on
+_href | The full destination URL
+
+
+
+
+
+
+
+
+
+## Download
+```javascript
+_fxm.events.push(['_fxm.pages.download','a[_id]', 'a[_href]']);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+When a visitor downloads a file
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_id | The element id of the element that they clicked on to initiate the download
+_href | The full URL of the file that was downloaded
+
+
+
+
+
+
+
+
+## Search
+```javascript
+_fxm.events.push(['_fxm.pages.search','a[_kw]', 'a[_rc]']);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+When a visitor performs a search
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_kw | The keywords that was used in the search
+_rc | The total number of items returned
+
+
+
+
+
+## Article View
+```javascript
+_fxm.events.push(['_fxm.articles.view','a[_at]', 'a[_tp]', 'a[_au]', 'a[_pd]']);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+When a visitor views an article such as a blog post
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_at | The title of the article
+_tp | The topic of the article
+_au | The name of the author of the article
+_pd | The published date of the article in ISO8061 format
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Page View
 
@@ -186,23 +362,141 @@ This endpoint retrieves all kittens.
 
 
 
-
-
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — we will automatically collect page related values of you don't specify any such as page title
 </aside>
 
-## Poll
-## Product Review
+
+
+
+
+
+
+
+
 ## Product View
+```javascript
+_fxm.events.push(['_fxm.ecommerce.productview','a[_pid]', 'a[_pn]', 'a[_pc]']);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+When a visitor views a product
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_pid | The ID of the product
+_pn | The name of the product
+_pc | The category of the product, only specify its main or top level category
+
+
+
+
+
+
+
+
+
+## Product Review
+```javascript
+_fxm.events.push(['_fxm.ecommerce.productreview','a[_pid]', 'a[_pn]', 'a[_pc]', 'a[_pr]']);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+When a visitor reviews a product
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_pid | The ID of the product
+_pn | The name of the product
+_pc | The category of the product, only specify its main or top level category
+_pr | The rating that the user specified such as 4 to represent 4/5 stars
+
+
+
+
+
+
+
+
+
+
+## Visitor Profile
+```javascript
+_fxm.events.push(['_fxm.visitor.profile','p[id]', 'p[fname]', 'p[lname]', 'p[email]']);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+Update the current visitor profile
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The unique id such as customer id for this visitor
+fname | The first name of the visitor
+lname | The last name of the visitor
+email | The email address of the visitor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Add Cart Item
+## Email *
+## Error
+## Onsite Ad
+## Order
+## Poll
+
 ## Purchase Item
 ## Remove Cart Item
-## Search
+
 ## Survey
 ## Video
 ## Visit Profile
-## Visitor Profile
+
 ## Widgets
+
+
+
+
 
 
 
