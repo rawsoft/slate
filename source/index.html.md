@@ -469,7 +469,28 @@ email | The email address of the visitor
 
 
 
+## Error
+```javascript
+_fxm.events.push(['_fxm.pages.error','a[_msg]', 'a[_code]', 'a[_cat]']);
+```
 
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+When a visitor experiences an error on your application
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_msg | The error message
+_code | The error code
+_cat | The category of the error if applicable
 
 
 
@@ -479,24 +500,143 @@ email | The email address of the visitor
 
 
 ## Add Cart Item
-## Email *
-## Error
-## Onsite Ad
-## Order
-## Poll
+```javascript
+_fxm.events.push(['_fxm.ecommerce.addcartitem','a[_pid]', 'a[_pn]', 'a[_pc]', 'a[_qty]','a[_pr]']);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+When a visitor adds an item to their cart
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_pid | The ID of the product
+_pn | The name of the product
+_pc | The category of the product, only specify its main or top level category
+_qty | The total quantity that was added to cart
+_pr | The rating that the user specified such as 4 to represent 4/5 stars
+
+
+
+
+
+
+
+
+## Remove Cart Item
+```javascript
+_fxm.events.push(['_fxm.ecommerce.removecartitem','a[_pid]', 'a[_pn]', 'a[_pc]']);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+When a visitor removes an item to their cart
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_pid | The ID of the product
+_pn | The name of the product
+_pc | The category of the product, only specify its main or top level category
+
+
+
+
+
+
 
 ## Purchase Item
-## Remove Cart Item
+```javascript
+_fxm.events.push(['_fxm.ecommerce.purchaseitem','a[_pid]', 'a[_pn]', 'a[_pc]', 'a[_qty]','a[_pr]', 'a[_oid]', 'a[_oln]', 'a[_tax]']);
+```
 
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+When a visitor purchases an item, this should be called for every item in addition to the _fxm.ecommerce.order call
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_pid | The ID of the product
+_pn | The name of the product
+_pc | The category of the product, only specify its main or top level category
+_qty | The total quantity that was added to cart
+_pr | The rating that the user specified such as 4 to represent 4/5 stars
+_oid | The order or transaction id
+_oln | The order line number
+_tax | The total tax for this specific item
+
+
+
+
+
+
+
+
+## Order
+```javascript
+_fxm.events.push(['_fxm.ecommerce.order','a[_oid]', 'a[_st]', 'a[_sht]', 'a[_tt]', 'a[_bc]', 'a[_bs]', 'a[_bz]', 'a[_qty]']);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+
+}
+```
+
+When a visitor places an order. This should be called in addition to _fxm.ecommerce.purchaseitem for each item.
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+_oid | The unique order id for this transaction
+_st | The sub total
+_sht | The shipping total
+_tt | The tax total
+_bc | The billing city
+_bs | The billing state/provine
+_bz | The billing zipcode/postal code
+_qty | The total number of unique items
+
+
+
+
+
+
+
+## Email *
+## Onsite Ad
+## Poll
 ## Survey
 ## Video
 ## Visit Profile
 
 ## Widgets
-
-
-
-
 
 
 
